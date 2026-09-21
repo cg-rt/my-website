@@ -179,6 +179,10 @@
   .about-opening p + p { margin-top: 26px; }
   .about-background { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; padding-block: 72px; border-top: 1px solid var(--color-rule); }
   .about-background .text-link { margin-top: 28px; }
+  .about-certifications { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--color-rule); scroll-margin-top: 40px; }
+  .about-certifications h3 { margin: 0 0 12px; }
+  .about-certifications ul { list-style: none; margin: 0; padding: 0; }
+  .about-certifications li + li { margin-top: 6px; }
   .working-style { padding-block: 40px 84px; }
   .working-rows article { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; border-top: 1px solid var(--color-rule); padding-block: 26px; }
   .working-rows p { color: var(--color-muted); }
