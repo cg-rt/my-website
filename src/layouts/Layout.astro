@@ -1,0 +1,58 @@
+---
+import '@fontsource-variable/commissioner';
+import '../styles/global.css';
+import Arrow from '../components/Arrow.astro';
+interface Props { title: string; description: string; current?: string; noindex?: boolean; }
+const { title, description, current = '', noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/selected-work/', 'Selected Work'], ['/about/', 'About'], ['/contact/', 'Contact'] ];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#164d43" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cosmin Ghinoiu" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {noindex && <meta name="robots" content="noindex" />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header section-wrap">
+      <a class="wordmark" href="/" aria-label="Cosmin Ghinoiu — Home">Cosmin Ghinoiu<span>Implementation & rollout</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden><span>Menu</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg></button>
+      <nav id="main-nav" aria-label="Main navigation">
+        {navigation.map(([href, label]) => <a href={href} aria-current={current === href ? 'page' : undefined} class:list={[{ 'nav-contact': href === '/contact/' }]}>{label}{href === '/contact/' && <Arrow direction="up-right" />}</a>)}
+      </nav>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer section-wrap">
+      <div><a class="footer-name" href="/">Cosmin Ghinoiu</a><p>Independent software implementation <br />and rollout consultant.</p></div>
+      <div class="footer-links"><a href="/contact/">Send an inquiry <Arrow /></a><a href="https://www.linkedin.com/in/cosmin-ghinoiu/" rel="me">LinkedIn <Arrow direction="up-right" /></a></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Cosmin Ghinoiu</span><span>Clear plans. Shared ownership. Follow-through.</span></div>
+    </footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector<HTMLElement>('#main-nav');
+      if (toggle && nav) {
+        document.documentElement.classList.add('menu-ready');
+        toggle.hidden = false;
+        const close = () => { toggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+        toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); nav.classList.toggle('is-open', open); });
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { close(); toggle.focus(); } });
+        nav.addEventListener('click', (event) => { if ((event.target as Element).closest('a')) close(); });
+        document.addEventListener('click', (event) => { if (!(event.target as Element).closest('.site-header')) close(); });
+        window.matchMedia('(min-width: 761px)').addEventListener('change', close);
+      }
+    </script>
+  </body>
+</html>

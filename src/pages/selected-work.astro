@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Arrow from '../components/Arrow.astro';
+import ContactClose from '../components/ContactClose.astro';
+import * as rollout from '../content/work/enterprise-rollout.md';
+import * as consolidation from '../content/work/account-consolidation.md';
+import * as handover from '../content/work/operational-handover.md';
+const projects = [ { id: 'enterprise-rollout', ...rollout }, { id: 'account-consolidation', ...consolidation }, { id: 'operational-handover', ...handover } ];
+---
+<Layout title="Selected Implementation & Delivery Work — Cosmin Ghinoiu" description="Anonymized examples of enterprise rollout, global account consolidation and operational handover, delivered by Cosmin Ghinoiu during employment." current="/selected-work/">
+  <section class="page-intro section-wrap"><h1>Work carried <br />through to use.</h1><p class="lead">Three examples of bringing requirements, people and delivery together. These projects were delivered during my employment in enterprise software; client details are anonymized.</p><nav class="page-index" aria-label="Project examples">{projects.map(project => <a href={'#' + project.id}>{project.frontmatter.title}<Arrow /></a>)}</nav></section>
+  <div class="section-wrap case-studies">{projects.map(({id, frontmatter, Content}) => <article class="case-study" id={id} aria-labelledby={id + '-title'}><header class="case-header"><h2 id={id + '-title'}>{frontmatter.title}</h2><dl><div><dt>Client context</dt><dd>{frontmatter.client}</dd></div><div><dt>My role</dt><dd>{frontmatter.role}</dd></div><div><dt>Scope</dt><dd>{frontmatter.scope}</dd></div></dl><p class="case-attribution">Delivered during employment.</p></header><div class="case-body"><div class="prose"><Content /></div><div class="case-result"><span>Result</span><p>{frontmatter.result}</p></div><a class="text-link" href="/contact/">Discuss a similar situation <Arrow /></a></div></article>)}</div>
+  <ContactClose />
+</Layout>

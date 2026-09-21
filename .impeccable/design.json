@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-20T11:18:52.406Z",
+  "title": "Design System: Cosmin Ghinoiu",
+  "extensions": {
+    "colorMeta": {
+      "green": {
+        "role": "primary",
+        "displayName": "Deep green",
+        "tonalRamp": [
+          "oklch(15% 0.0593 178.52)",
+          "oklch(26.43% 0.0593 178.52)",
+          "oklch(37.86% 0.0593 178.52)",
+          "oklch(49.29% 0.0593 178.52)",
+          "oklch(60.71% 0.0593 178.52)",
+          "oklch(72.14% 0.0593 178.52)",
+          "oklch(83.57% 0.0593 178.52)",
+          "oklch(95% 0.0593 178.52)"
+        ]
+      },
+      "green-deep": {
+        "role": "primary",
+        "displayName": "Deeper green",
+        "tonalRamp": [
+          "oklch(15% 0.0483 178.07)",
+          "oklch(26.43% 0.0483 178.07)",
+          "oklch(37.86% 0.0483 178.07)",
+          "oklch(49.29% 0.0483 178.07)",
+          "oklch(60.71% 0.0483 178.07)",
+          "oklch(72.14% 0.0483 178.07)",
+          "oklch(83.57% 0.0483 178.07)",
+          "oklch(95% 0.0483 178.07)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Dark green ink",
+        "tonalRamp": [
+          "oklch(15% 0.0278 176.43)",
+          "oklch(26.43% 0.0278 176.43)",
+          "oklch(37.86% 0.0278 176.43)",
+          "oklch(49.29% 0.0278 176.43)",
+          "oklch(60.71% 0.0278 176.43)",
+          "oklch(72.14% 0.0278 176.43)",
+          "oklch(83.57% 0.0278 176.43)",
+          "oklch(95% 0.0278 176.43)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted green ink",
+        "tonalRamp": [
+          "oklch(15% 0.0304 171.73)",
+          "oklch(26.43% 0.0304 171.73)",
+          "oklch(37.86% 0.0304 171.73)",
+          "oklch(49.29% 0.0304 171.73)",
+          "oklch(60.71% 0.0304 171.73)",
+          "oklch(72.14% 0.0304 171.73)",
+          "oklch(83.57% 0.0304 171.73)",
+          "oklch(95% 0.0304 171.73)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool paper",
+        "tonalRamp": [
+          "oklch(15% 0.0034 145.55)",
+          "oklch(26.43% 0.0034 145.55)",
+          "oklch(37.86% 0.0034 145.55)",
+          "oklch(49.29% 0.0034 145.55)",
+          "oklch(60.71% 0.0034 145.55)",
+          "oklch(72.14% 0.0034 145.55)",
+          "oklch(83.57% 0.0034 145.55)",
+          "oklch(95% 0.0034 145.55)"
+        ]
+      },
+      "tint": {
+        "role": "neutral",
+        "displayName": "Pale green tint",
+        "tonalRamp": [
+          "oklch(15% 0.0075 164.93)",
+          "oklch(26.43% 0.0075 164.93)",
+          "oklch(37.86% 0.0075 164.93)",
+          "oklch(49.29% 0.0075 164.93)",
+          "oklch(60.71% 0.0075 164.93)",
+          "oklch(72.14% 0.0075 164.93)",
+          "oklch(83.57% 0.0075 164.93)",
+          "oklch(95% 0.0075 164.93)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26.43% 0.0000 0.00)",
+          "oklch(37.86% 0.0000 0.00)",
+          "oklch(49.29% 0.0000 0.00)",
+          "oklch(60.71% 0.0000 0.00)",
+          "oklch(72.14% 0.0000 0.00)",
+          "oklch(83.57% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
+      },
+      "on-green": {
+        "role": "primary",
+        "displayName": "Pale text on green",
+        "tonalRamp": [
+          "oklch(15% 0.0075 164.93)",
+          "oklch(26.43% 0.0075 164.93)",
+          "oklch(37.86% 0.0075 164.93)",
+          "oklch(49.29% 0.0075 164.93)",
+          "oklch(60.71% 0.0075 164.93)",
+          "oklch(72.14% 0.0075 164.93)",
+          "oklch(83.57% 0.0075 164.93)",
+          "oklch(95% 0.0075 164.93)"
+        ]
+      },
+      "green-soft": {
+        "role": "primary",
+        "displayName": "Soft green",
+        "tonalRamp": [
+          "oklch(15% 0.0240 169.82)",
+          "oklch(26.43% 0.0240 169.82)",
+          "oklch(37.86% 0.0240 169.82)",
+          "oklch(49.29% 0.0240 169.82)",
+          "oklch(60.71% 0.0240 169.82)",
+          "oklch(72.14% 0.0240 169.82)",
+          "oklch(83.57% 0.0240 169.82)",
+          "oklch(95% 0.0240 169.82)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Soft rule",
+        "tonalRamp": [
+          "oklch(15% 0.0170 162.68)",
+          "oklch(26.43% 0.0170 162.68)",
+          "oklch(37.86% 0.0170 162.68)",
+          "oklch(49.29% 0.0170 162.68)",
+          "oklch(60.71% 0.0170 162.68)",
+          "oklch(72.14% 0.0170 162.68)",
+          "oklch(83.57% 0.0170 162.68)",
+          "oklch(95% 0.0170 162.68)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field border",
+        "tonalRamp": [
+          "oklch(15% 0.0284 162.85)",
+          "oklch(26.43% 0.0284 162.85)",
+          "oklch(37.86% 0.0284 162.85)",
+          "oklch(49.29% 0.0284 162.85)",
+          "oklch(60.71% 0.0284 162.85)",
+          "oklch(72.14% 0.0284 162.85)",
+          "oklch(83.57% 0.0284 162.85)",
+          "oklch(95% 0.0284 162.85)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Brick error",
+        "tonalRamp": [
+          "oklch(15% 0.1339 32.20)",
+          "oklch(26.43% 0.1339 32.20)",
+          "oklch(37.86% 0.1339 32.20)",
+          "oklch(49.29% 0.1339 32.20)",
+          "oklch(60.71% 0.1339 32.20)",
+          "oklch(72.14% 0.1339 32.20)",
+          "oklch(83.57% 0.1339 32.20)",
+          "oklch(95% 0.1339 32.20)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Primary page statements; page-specific adjustments remain in source CSS."
+      },
+      "display-opening": {
+        "displayName": "Opening display",
+        "purpose": "The lighter-weight statement in the green home opening."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major reading sections."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Row and subsection headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Main reading text; 16px at the narrow breakpoint."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Introductory paragraphs."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sentence-case form labels."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Filled-button text."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "duration-focus",
+        "value": "220ms",
+        "purpose": "Button fill and text transitions; evidence color and rule transitions."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "The single transition easing used for focus and hover reinforcement."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }",
+        "purpose": "Remove transitions and animation when reduced motion is requested."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1050px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "sticky-case-context",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Primary inquiry action on a pale reading ground; disabled state also supports pending submission.",
+      "html": "<button class=\"ds-button ds-button-dark\" type=\"button\">Send inquiry <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-button{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:30px;padding:16px 21px;min-height:54px;border:1px solid transparent;border-radius:var(--radius-control,4px);font-size:.95rem;font-weight:520;line-height:1.3;text-decoration:none;cursor:pointer;transition:background-color var(--duration-focus,220ms) var(--ease-out,cubic-bezier(.16,1,.3,1)),color var(--duration-focus,220ms) var(--ease-out,cubic-bezier(.16,1,.3,1));}.ds-button:active{filter:brightness(.95)}@media(max-width:760px){.ds-button{padding:15px 18px;font-size:.88rem;gap:20px;}}.ds-arrow{display:block;flex:0 0 auto;}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}.ds-button-dark{background:var(--color-green,#164d43);color:var(--color-white,#fff)}.ds-button-dark:hover{background:var(--color-green-deep,#103a32)}.ds-button-dark:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:5px;}.ds-button:disabled{cursor:not-allowed;background:var(--color-tint,#eaf0ed);color:var(--color-muted,#4e655d);border-color:var(--color-rule,#c5d2cb);}"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Primary inquiry action within the green opening.",
+      "html": "<div class=\"ds-green-sample\"><a class=\"ds-button ds-button-light\" href=\"/contact/\">Discuss your implementation <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-button{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:30px;padding:16px 21px;min-height:54px;border:1px solid transparent;border-radius:var(--radius-control,4px);font-size:.95rem;font-weight:520;line-height:1.3;text-decoration:none;cursor:pointer;transition:background-color var(--duration-focus,220ms) var(--ease-out,cubic-bezier(.16,1,.3,1)),color var(--duration-focus,220ms) var(--ease-out,cubic-bezier(.16,1,.3,1));}.ds-button:active{filter:brightness(.95)}@media(max-width:760px){.ds-button{padding:15px 18px;font-size:.88rem;gap:20px;}}.ds-arrow{display:block;flex:0 0 auto;}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}.ds-green-sample{background:var(--color-green,#164d43);padding:24px}.ds-button-light{background:var(--color-on-green,#eaf0ed);color:var(--color-green-deep,#103a32)}.ds-button-light:hover{background:var(--color-white,#fff)}.ds-button-light:focus-visible{outline:2px solid var(--color-on-green,#eaf0ed);outline-offset:5px;}.ds-button:disabled{cursor:not-allowed;background:var(--color-tint,#eaf0ed);color:var(--color-muted,#4e655d);border-color:var(--color-rule,#c5d2cb);}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Underlined standalone action with the shared arrow.",
+      "html": "<a class=\"ds-text-link\" href=\"/selected-work/\">Selected Work <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-text-link{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:inline-flex;align-items:center;gap:18px;width:fit-content;font-size:.96rem;font-weight:520;line-height:1.65;text-decoration:none;border-bottom:1px solid currentColor;padding-block:7px;color:var(--color-ink,#172b26)}.ds-text-link:hover{color:var(--color-green,#164d43)}.ds-text-link:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:5px;}.ds-arrow{display:block;flex:0 0 auto;}"
+    },
+    {
+      "name": "Labelled Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "White editable field with visible label, stronger boundary and associated feedback.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-name\">Your name</label><input id=\"ds-name\" name=\"name\" autocomplete=\"name\" required maxlength=\"120\" aria-describedby=\"ds-name-error\"/><p class=\"ds-field-error\" id=\"ds-name-error\"></p></div>",
+      "css": ".ds-field{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);color:var(--color-ink,#172b26);margin-bottom:26px}.ds-field label{display:block;font-size:.9rem;font-weight:520;line-height:1.65;margin-bottom:8px}.ds-field input{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);box-sizing:border-box;width:100%;min-height:50px;border:1px solid #91a69b;border-radius:var(--radius-control,4px);background:var(--color-white,#fff);color:var(--color-ink,#172b26);padding:12px 14px;font-size:1rem;line-height:1.65;caret-color:var(--color-green,#164d43)}.ds-field input:hover{border-color:var(--color-green,#164d43)}.ds-field input:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:2px;}.ds-field input[aria-invalid='true']{border-color:var(--color-error,#963524)}.ds-field-error{font-size:.83rem;color:var(--color-error,#963524);margin:7px 0 0}.ds-field-error:empty{display:none}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Plain five-page navigation with a current-page underline and a contact accent; sample shows the expanded narrow-screen state.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"/\" aria-current=\"page\">Home</a><a href=\"/services/\">Services</a><a href=\"/selected-work/\">Selected Work</a><a href=\"/about/\">About</a><a class=\"ds-nav-contact\" href=\"/contact/\">Contact <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></nav>",
+      "css": ".ds-nav{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:flex;align-items:center;gap:30px;font-size:.9rem;line-height:1.65;color:var(--color-ink,#172b26)}.ds-nav a{display:flex;align-items:center;gap:10px;white-space:nowrap;padding-block:9px;color:inherit;text-decoration:none}.ds-nav a[aria-current='page']{text-decoration:underline;text-underline-offset:.45em;text-decoration-thickness:1px}.ds-nav a:hover{color:var(--color-green,#164d43);text-decoration:underline;text-underline-offset:.45em}.ds-nav .ds-nav-contact{margin-left:8px;border-bottom:1px solid var(--color-green,#164d43)}.ds-nav-contact .ds-arrow{transform:rotate(-45deg)}.ds-nav a:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:5px;}.ds-arrow{display:block;flex:0 0 auto;}@media(max-width:1050px){.ds-nav{gap:18px;font-size:.85rem}}@media(max-width:760px){.ds-nav{flex-direction:column;align-items:stretch;gap:0;padding-top:10px;border-top:1px solid var(--color-rule,#c5d2cb)}.ds-nav a{padding-block:13px;font-size:1rem}.ds-nav .ds-nav-contact{margin-left:0;border:0}}"
+    },
+    {
+      "name": "Situation and Evidence",
+      "kind": "custom",
+      "refersTo": "situation-evidence",
+      "description": "A responsibility links to its service; adjacent evidence links to a named example. Hover and focus reinforce the pairing.",
+      "html": "<article class=\"ds-situation\"><div class=\"ds-situation-main\"><h3><a href=\"/services/#implementation\">Plan and deliver an implementation <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></h3><p>Connect the requirements, dependencies and people needed to carry the work through.</p></div><a class=\"ds-evidence\" href=\"/selected-work/#enterprise-rollout\"><span>From enterprise pilot to global launch</span><p>Work delivered during employment, from a 12-month pilot through to launch.</p><span class=\"ds-evidence-action\">Follow the evidence <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></span></a></article>",
+      "css": ".ds-situation{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:grid;grid-template-columns:1.5fr 1fr;gap:10%;padding:34px 0;border-top:1px solid var(--color-rule,#c5d2cb);color:var(--color-ink,#172b26);line-height:1.65}.ds-situation h3{font-size:clamp(1.35rem,2.05vw,1.8rem);font-weight:520;line-height:1.3;letter-spacing:-.02em;margin:0 0 16px}.ds-situation h3 a{display:flex;gap:30px;align-items:center;justify-content:space-between;color:inherit;text-decoration:none}.ds-situation-main p{margin:0;max-width:610px;color:var(--color-muted,#4e655d)}.ds-situation-main .ds-arrow{color:var(--color-muted,#4e655d)}.ds-evidence{display:flex;flex-direction:column;align-items:start;padding:0 0 0 24px;border-left:1px solid var(--color-rule,#c5d2cb);text-decoration:none;color:inherit;transition:color var(--duration-focus,220ms) var(--ease-out,cubic-bezier(.16,1,.3,1)),border-color var(--duration-focus,220ms) var(--ease-out,cubic-bezier(.16,1,.3,1))}.ds-evidence>span:first-child{font-size:.95rem;font-weight:550}.ds-evidence p{margin:8px 0 0;font-size:.86rem;color:var(--color-muted,#4e655d)}.ds-evidence-action{display:flex;align-items:center;gap:8px;font-size:.78rem;margin-top:16px;color:var(--color-muted,#4e655d)}.ds-evidence-action .ds-arrow{width:16px;height:16px;transform:rotate(-45deg)}.ds-situation:hover .ds-evidence,.ds-situation:focus-within .ds-evidence{border-color:var(--color-green,#164d43);color:var(--color-green,#164d43)}.ds-evidence:hover .ds-evidence-action,.ds-evidence:focus-visible .ds-evidence-action{text-decoration:underline;text-underline-offset:5px}.ds-situation a:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:5px;}.ds-arrow{display:block;flex:0 0 auto;}@media(max-width:1050px){.ds-situation{gap:6%}}@media(max-width:760px){.ds-situation{display:block;padding-block:28px}.ds-situation h3{font-size:1.42rem;margin-bottom:12px}.ds-situation h3 a{gap:18px}.ds-evidence{border-left:0;padding:0;margin-top:22px}.ds-evidence>span:first-child{font-size:.86rem}.ds-evidence p{font-size:.81rem;margin-top:5px}.ds-evidence-action{margin-top:9px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}"
+    },
+    {
+      "name": "Service Proof Insert",
+      "kind": "card",
+      "refersTo": "service-proof",
+      "description": "A flat tinted evidence link within an expanded service situation.",
+      "html": "<a class=\"ds-service-proof\" href=\"/selected-work/#operational-handover\"><span>Implementation and handover</span><p>A content-management implementation carried through to independent operation.</p><span class=\"ds-proof-action\">Read the example <svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></span></a>",
+      "css": ".ds-service-proof{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:block;padding:24px;background:var(--color-tint,#eaf0ed);color:var(--color-ink,#172b26);line-height:1.65;text-decoration:none}.ds-service-proof>span:first-child{font-size:1rem;font-weight:550}.ds-service-proof p{color:var(--color-muted,#4e655d);font-size:.91rem;margin:8px 0 0}.ds-proof-action{display:inline-flex;gap:18px;align-items:center;font-size:.82rem;font-weight:520;margin-top:14px;padding-block:7px}.ds-proof-action .ds-arrow{transform:rotate(-45deg)}.ds-service-proof:hover .ds-proof-action{text-decoration:underline}.ds-service-proof:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:5px;}.ds-arrow{display:block;flex:0 0 auto;}@media(max-width:760px){.ds-service-proof{padding:20px}}"
+    },
+    {
+      "name": "Project Row",
+      "kind": "custom",
+      "refersTo": "project-row",
+      "description": "An open, ruled project link with a category, title, short description and directional arrow.",
+      "html": "<a class=\"ds-project-row\" href=\"/selected-work/#account-consolidation\"><span>Complex coordination</span><h3>Three accounts.<br/>One working setup.</h3><p>Regional requirements, multiple time zones and roughly 30 stakeholders aligned through consolidation.</p><svg class=\"ds-arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-project-row{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);display:grid;grid-template-columns:.7fr 1.3fr 1.25fr 20px;gap:34px;align-items:start;padding-block:32px;border-top:1px solid var(--color-rule,#c5d2cb);color:var(--color-ink,#172b26);line-height:1.65;text-decoration:none}.ds-project-row>span{font-size:.8rem;color:var(--color-muted,#4e655d);padding-top:4px}.ds-project-row h3{margin:0;font-size:1.5rem;line-height:1.3;letter-spacing:-.02em;font-weight:520}.ds-project-row p{margin:0;font-size:.94rem;color:var(--color-muted,#4e655d)}.ds-project-row>.ds-arrow{margin-top:5px;transform:rotate(-45deg)}.ds-project-row:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}.ds-project-row:focus-visible{outline:2px solid var(--color-green,#164d43);outline-offset:5px;}.ds-arrow{display:block;flex:0 0 auto;}@media(max-width:1050px){.ds-project-row{grid-template-columns:1fr 1.2fr 20px}.ds-project-row>span{display:none}}@media(max-width:760px){.ds-project-row{grid-template-columns:1fr 20px;gap:16px;padding-block:26px}.ds-project-row h3{grid-column:1;font-size:1.4rem}.ds-project-row h3 br{display:none}.ds-project-row p{grid-column:1;font-size:.9rem}.ds-project-row>.ds-arrow{grid-column:2;grid-row:1}}"
+    },
+    {
+      "name": "Case Result Panel",
+      "kind": "custom",
+      "refersTo": "result-panel",
+      "description": "A flat green insert emphasizing a supported case result without floating-card decoration.",
+      "html": "<div class=\"ds-case-result\"><span>Result</span><p>A completed consolidation with stakeholder sign-off.</p></div>",
+      "css": ".ds-case-result{font-family:var(--font-body,'Commissioner Variable','Commissioner',sans-serif);background:var(--color-green,#164d43);color:var(--color-on-green,#eaf0ed);padding:28px;line-height:1.65}.ds-case-result>span{font-size:.8rem;color:var(--color-green-soft,#c7dbd3)}.ds-case-result p{margin:12px 0 0;font-size:1.3rem;line-height:1.4;text-wrap:balance}@media(max-width:760px){.ds-case-result{padding:24px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The implementation brief",
+    "overview": "A concise executive brief makes responsibilities and supporting evidence easy to read. Large, direct statements establish the offer; open rows and unequal columns connect a visitor's situation to relevant work. The personality is precise, human and restrained, expressed through proportion, useful detail and a single sans-serif family.\n\nDeep green creates emphasis while cool pale grounds support sustained reading. Flat sections, thin rules and modestly softened controls keep the interface practical. Copy stays first person, natural and specific. Anonymous employment examples retain their attribution; evidence is part of the reading layout, never decorative proof.",
+    "keyCharacteristics": [
+      "Broad statements followed by concrete responsibilities and evidence.",
+      "One self-hosted type family with restrained weight changes.",
+      "Flat green, pale and white fields connected by thin rules.",
+      "Evidence remains readable without hover, disclosure or animation.",
+      "Open desktop columns become a direct reading sequence on mobile."
+    ],
+    "rules": [
+      {
+        "name": "The Role Before Decoration Rule",
+        "body": "Use green fields for introductions, supported results and actions; keep the long reading passages on pale ground with dark ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Build hierarchy with Commissioner, size, spacing and the implemented weight differences; do not introduce a competing display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Adjacent Evidence Rule",
+        "body": "Keep the supporting example next to its responsibility on wide screens and immediately after it on narrow screens. Focus and hover may reinforce the connection but never reveal required content.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Preserve the contrast between open ruled rows and solid tonal inserts; do not add floating-card depth to these patterns.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** connect specific responsibilities to nearby, named evidence.",
+      "**Do** use the self-hosted Commissioner family and the recorded green, ink and pale-ground roles.",
+      "**Do** preserve open rows, thin rules, flat inserts and comfortable prose widths.",
+      "**Do** keep evidence and actions available without hover, with visible keyboard focus and reduced-motion support.",
+      "**Do** use restrained first-person copy and keep anonymous employment attribution visible beside project evidence.",
+      "**Do** keep the 20,000-user figure attached to launch scope wherever that example appears."
+    ],
+    "donts": [
+      "**Don't** replace the responsibility-to-evidence rows with a generic icon-card grid or a numbered process.",
+      "**Don't** add heading eyebrows, decorative metrics, floating shadows or gradients to this world.",
+      "**Don't** introduce glyph icons, a second display face, fabricated client logos, testimonials or project imagery.",
+      "**Don't** turn launch scope into active usage, adoption or ROI, or present employment work as independent consulting engagements.",
+      "**Don't** hide essential content behind animation, hover or disclosure, or imply inbox delivery from service acceptance alone."
+    ]
+  }
+}

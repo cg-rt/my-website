@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Arrow from '../components/Arrow.astro';
+import { isFormEndpoint } from '../lib/contact.mjs';
+import { formEndpoint as endpoint } from '../config';
+const formReady = isFormEndpoint(endpoint);
+---
+<Layout title="Contact Cosmin Ghinoiu — Discuss Your Implementation" description="Tell me about your software implementation, rollout or delivery challenge. Get in touch about a short project or a longer embedded engagement." current="/contact/">
+  <section class="contact-page section-wrap"><div class="contact-intro"><h1>Tell me where <br />things stand.</h1><p class="lead">What are you implementing, what needs to move forward, and where could I help?</p><p>A few lines are enough to start. You don’t need a finished brief.</p><div class="contact-direct"><a href="https://www.linkedin.com/in/cosmin-ghinoiu/" rel="me">Find me on LinkedIn <Arrow direction="up-right" /></a></div><p class="contact-engagement">For short projects and longer <br />embedded contracts.</p></div>
+  <div class="form-column">
+    {!formReady && <div class="form-notice"><p>The form is currently unavailable.</p><p>Please try again later.</p></div>}
+    <form id="inquiry-form" action={formReady ? endpoint : undefined} method="POST" data-endpoint={formReady ? endpoint : ''} aria-label="Project inquiry">
+      <p class="form-guide">All fields are required except company.</p>
+      <div class="form-pair"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required maxlength="120" aria-describedby="name-error" /><p class="field-error" id="name-error"></p></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="email-error" /><p class="field-error" id="email-error"></p></div></div>
+      <div class="field"><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization" maxlength="160" /></div>
+      <div class="field"><label for="message">Your situation</label><textarea id="message" name="message" rows="6" required maxlength="5000" aria-describedby="message-hint message-error"></textarea><p class="field-hint" id="message-hint">The software, the stage you’re at, and what you need help with.</p><p class="field-error" id="message-error"></p></div>
+      <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="_gotcha" tabindex="-1" autocomplete="off" /></div>
+      <button class="button button-dark" id="send-inquiry" type="submit" disabled={!formReady}><span data-submit-label>Send inquiry</span> <Arrow /></button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+      <p class="form-privacy">I’ll use the details you send to respond to your inquiry. Please avoid confidential project material.{formReady && <> Submissions are processed by <a href="https://formspree.io/legal/privacy-policy/">Formspree</a>.</>}</p>
+      <noscript><p>{formReady ? 'Sending will open the form service’s confirmation page.' : 'Please return later to send your inquiry.'}</p></noscript>
+    </form>
+  </div></section>
+  <script>
+    import { validateInquiry, submitInquiry } from '../lib/contact.mjs';
+    const form = document.querySelector<HTMLFormElement>('#inquiry-form');
+    const button = document.querySelector<HTMLButtonElement>('#send-inquiry');
+    const status = document.querySelector<HTMLElement>('#form-status');
+    if (form && button && status) {
+      form.noValidate = true;
+      let pending = false;
+      const clearErrors = () => { for (const field of ['name', 'email', 'message']) { document.getElementById(field)?.removeAttribute('aria-invalid'); const output = document.getElementById(field + '-error'); if (output) output.textContent = ''; } };
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (pending) return;
+        clearErrors();
+        status.textContent = '';
+        const data = new FormData(form);
+        const errors = validateInquiry(data);
+        if (Object.keys(errors).length) {
+          for (const [field, message] of Object.entries(errors)) { document.getElementById(field)?.setAttribute('aria-invalid', 'true'); const output = document.getElementById(field + '-error'); if (output) output.textContent = String(message); }
+          document.getElementById(Object.keys(errors)[0])?.focus();
+          return;
+        }
+        pending = true;
+        button.disabled = true;
+        button.querySelector('[data-submit-label]')!.textContent = 'Sending…';
+        form.setAttribute('aria-busy', 'true');
+        const result = await submitInquiry(form.dataset.endpoint || '', data);
+        form.removeAttribute('aria-busy');
+        pending = false;
+        button.disabled = !form.dataset.endpoint;
+        button.querySelector('[data-submit-label]')!.textContent = 'Send inquiry';
+        if (result.ok) {
+          status.dataset.state = 'success';
+          status.textContent = 'Thank you. Your inquiry has been submitted. I’ll reply by email.';
+          form.reset();
+        } else {
+          status.dataset.state = 'error';
+          status.textContent = result.reason === 'rate-limit' ? 'The form is receiving too many requests. Your message is still here. Please wait a little, then try again.' : 'Your inquiry could not be confirmed as sent. Your message is still here. Please try again in a moment.';
+        }
+        status.focus();
+      });
+    }
+  </script>
+</Layout>

@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Arrow from '../components/Arrow.astro';
+import ContactClose from '../components/ContactClose.astro';
+import { services } from '../data/services';
+---
+<Layout title="Cosmin Ghinoiu — Software Implementation & Rollout Consultant" description="Independent software implementation and rollout support. I help vendors and enterprise teams plan delivery, coordinate complex rollouts, and prepare people for handover." current="/">
+  <section class="home-intro">
+    <div class="section-wrap">
+      <h1>Software implementations, <br /><span>carried through.</span></h1>
+      <div class="intro-bottom">
+        <div class="intro-copy"><p>I help software vendors and enterprise teams turn complex requirements into a delivery plan—and carry the work through rollout, training and handover.</p><a class="button button-light" href="/contact/">Discuss your implementation <Arrow /></a></div>
+        <div class="intro-aside"><p>Independent support for <br />short projects and <br />longer embedded contracts.</p><a href="/about/">Meet Cosmin <Arrow /></a></div>
+      </div>
+      <a class="intro-proof" href="/selected-work/#enterprise-rollout"><span>Previously, during employment: a 12-month enterprise pilot through to a global launch for 20,000 users.</span><span class="proof-action">Read the project <Arrow /></span></a>
+    </div>
+  </section>
+  <section class="situations section-wrap" aria-labelledby="situations-title">
+    <div class="section-heading"><h2 id="situations-title">Where I can help.</h2><p>At the start, in the difficult middle, <br class="desktop-break" /> and when it’s time to hand over.</p></div>
+    <div class="situation-list">
+      {services.map((service) => <article class="situation"><div class="situation-main"><h3><a href={'/services/#' + service.id}>{service.title}<Arrow /></a></h3><p>{service.summary}</p></div><a class="evidence-link" href={service.href}><span>{service.proofTitle}</span><p>{service.proof}</p><span class="evidence-action">Follow the evidence <Arrow direction="up-right" /></span></a></article>)}
+    </div>
+    <p class="source-note">Project examples describe work I delivered during employment. Client details are anonymized.</p>
+  </section>
+  <section class="work-preview" aria-labelledby="work-title"><div class="section-wrap">
+    <div class="section-heading"><h2 id="work-title">The work behind the offer.</h2><a class="text-link" href="/selected-work/">Selected Work <Arrow /></a></div>
+    <div class="project-list">
+      <a class="project-row" href="/selected-work/#enterprise-rollout"><span>Enterprise rollout</span><h3>A pilot that became <br />a global launch.</h3><p>Requirements, cross-functional delivery and enablement for a global pharmaceutical enterprise.</p><Arrow direction="up-right" /></a>
+      <a class="project-row" href="/selected-work/#account-consolidation"><span>Complex coordination</span><h3>Three accounts. <br />One working setup.</h3><p>Regional requirements, multiple time zones and roughly 30 stakeholders aligned through consolidation.</p><Arrow direction="up-right" /></a>
+      <a class="project-row" href="/selected-work/#operational-handover"><span>Operational handover</span><h3>Built to be run <br />by the people using it.</h3><p>A content-management implementation carried from requirements through to independent operation.</p><Arrow direction="up-right" /></a>
+    </div>
+  </div></section>
+  <section class="engagement section-wrap" aria-labelledby="engagement-title"><h2 id="engagement-title">A defined project. <br />Or part of your team.</h2><div><p>I can take on a specific piece of implementation work or work alongside your team through a longer delivery period.</p><p>We start with the situation: what needs to happen, what is getting in the way, and where you need someone to take responsibility. The scope follows from that.</p><a class="text-link" href="/services/">Explore how I can help <Arrow /></a></div></section>
+  <ContactClose />
+</Layout>
