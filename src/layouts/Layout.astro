@@ -28,7 +28,7 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/selected-work
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header section-wrap">
-      <a class="wordmark" href="/" aria-label="Cosmin Ghinoiu — Home">Cosmin Ghinoiu<span>Implementation & rollout</span></a>
+      <a class="wordmark" href="/" aria-label="Cosmin Ghinoiu — Home">Cosmin Ghinoiu<span>Implementation & client delivery</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden><span>Menu</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg></button>
       <nav id="main-nav" aria-label="Main navigation">
         {navigation.map(([href, label]) => <a href={href} aria-current={current === href ? 'page' : undefined} class:list={[{ 'nav-contact': href === '/contact/' }]}>{label}{href === '/contact/' && <Arrow direction="up-right" />}</a>)}
@@ -36,8 +36,8 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/selected-work
     </header>
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer section-wrap">
-      <div><a class="footer-name" href="/">Cosmin Ghinoiu</a><p>Independent software implementation <br />and rollout consultant.</p></div>
-      <div class="footer-links"><a href="/contact/">Send an inquiry <Arrow /></a><a href="https://www.linkedin.com/in/cosmin-ghinoiu/" rel="me">LinkedIn <Arrow direction="up-right" /></a></div>
+      <div><a class="footer-name" href="/">Cosmin Ghinoiu</a><p>Senior implementation and client delivery lead.<br />Contract roles and defined projects.</p></div>
+      <div class="footer-links"><a href="/contact/">Discuss a role or project <Arrow /></a><a href="https://www.linkedin.com/in/cosmin-ghinoiu/" rel="me">LinkedIn <Arrow direction="up-right" /></a></div>
       <div class="footer-bottom"><span>© {new Date().getFullYear()} Cosmin Ghinoiu</span><span>Clear plans. Shared ownership. Follow-through.</span></div>
     </footer>
     <script>

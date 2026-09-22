@@ -12,7 +12,7 @@ colors:
   on-green: "#eaf0ed"
   green-soft: "#c7dbd3"
   rule: "#c5d2cb"
-  field-border: "#91a69b"
+  field-border: "#748c7f"
   error: "#963524"
 typography:
   display:
@@ -183,7 +183,7 @@ The shared container is centered with a maximum width of 1280px and a width of `
 
 The primary spatial pattern is open paired columns: responsibility beside evidence, a heading beside explanation, or case context beside narrative. Home situations use a 1.5:1 proportion, while case studies use 1:1.27. Thin rules separate entries; content does not rely on boxed cards. Case headings become sticky only from 1100px upward, with 36px top clearance.
 
-At 1050px, gaps tighten, the project category column is omitted, and paired form fields stack. At 760px, substantive columns become one reading sequence; each evidence block follows its situation. The home secondary aside is omitted while offer, contact action and proof remain. Body text becomes 16px and section rhythm becomes 64px. Display headings use the existing page-specific mobile sizes rather than forcing one size onto every composition.
+At 1050px, gaps tighten, the project category column is omitted, and paired form fields stack. At 760px, substantive columns become one reading sequence; each evidence block follows its situation. The home domain aside follows the main copy and actions; contract wording stays in the main introduction at every width. Body text becomes 16px and section rhythm becomes 64px. Display headings use page-specific mobile sizes, with the home heading at `clamp(2.05rem, 9vw, 3.8rem)` and safe wrapping for long words.
 
 **The Adjacent Evidence Rule.** Keep the supporting example next to its responsibility on wide screens and immediately after it on narrow screens. Focus and hover may reinforce the connection but never reveal required content.
 
@@ -225,11 +225,11 @@ On mobile, the script-enhanced Menu button reveals an in-flow vertical list with
 
 ### Situation and evidence rows
 
-The signature row pairs a linked situation heading and explanation with an evidence title, short description and explicit evidence link. A left rule and inset distinguish the evidence on desktop; mobile removes that rule and inset. Hover or focus anywhere in the row turns the evidence boundary and title green. The evidence link lands on a named case or working-practice anchor. Four situations represent alternative reasons to engage, not numbered methodology stages.
+The signature row pairs a linked situation heading and explanation with an evidence title and explicit evidence link. Homepage rows use compact evidence links; Services retains the supporting detail. A left rule and inset distinguish the evidence on desktop; mobile removes that rule and inset. Hover or focus anywhere in the row turns the evidence boundary and title green. The evidence link lands on a named case or working-practice anchor. Four situations represent alternative reasons to engage, not numbered methodology stages.
 
 ### Proof and result inserts
 
-Service evidence uses a flat tinted panel with a title, description and arrow link. Its padding reduces from the recorded desktop value to 20px on mobile. Case results use green with pale text, a quiet “Result” field label and a larger statement; their padding reduces to 24px on mobile. These labels describe real content fields and do not establish a heading-eyebrow style.
+Service evidence uses a flat tinted panel with a title, description and arrow link. Its padding reduces from the recorded desktop value to 20px on mobile. Case responsibility and result precede the longer narrative. Results use green with pale text, a quiet “Result” field label and a larger statement; their padding reduces to 24px on mobile. These labels describe real content fields and do not establish a heading-eyebrow style.
 
 ### Project rows and contact close
 

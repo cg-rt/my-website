@@ -14,7 +14,7 @@ export function validateInquiry(data) {
   if (!name) errors.name = 'Please enter your name.';
   else if (name.length > 120) errors.name = 'Please keep your name under 120 characters.';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) errors.email = 'Please enter a valid email address so I can reply.';
-  if (!message) errors.message = 'Please tell me a little about your situation.';
+  if (!message) errors.message = 'Please tell me a little about the role or project.';
   else if (message.length > 5000) errors.message = 'Please keep your message under 5,000 characters.';
   return errors;
 }
