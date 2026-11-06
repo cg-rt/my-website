@@ -89,7 +89,7 @@
   .skip-link:focus { transform: translateY(0); }
 
   /* Home intro: white canvas with a faint 24px grid */
-  .home-intro { position: relative; isolation: isolate; border-bottom: 1px solid var(--stroke-weak); }
+  .home-intro { position: relative; isolation: isolate; z-index: 41; border-bottom: 1px solid var(--stroke-weak); }
   .home-intro::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px); background-size: 24px 24px; background-position: center top; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 120px, #000 45%, transparent 82%), radial-gradient(440px circle at var(--lx, -2000px) calc(var(--py, -2000px) - var(--hero-top, 0px)), #000 0%, rgb(0 0 0 / .5) 55%, rgb(0 0 0 / .5) 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 120px, #000 45%, transparent 82%), radial-gradient(440px circle at var(--lx, -2000px) calc(var(--py, -2000px) - var(--hero-top, 0px)), #000 0%, rgb(0 0 0 / .5) 55%, rgb(0 0 0 / .5) 100%); -webkit-mask-composite: source-in; mask-composite: intersect; }
   .home-intro .section-wrap { padding-top: 76px; padding-bottom: 56px; }
   .home-intro h1 { max-width: 1100px; }
