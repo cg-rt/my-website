@@ -1,117 +1,139 @@
 ---
-name: Cosmin Ghinoiu — The implementation brief
-description: A clear, restrained visual system connecting implementation responsibilities to attributable evidence.
+name: Cosmin Ghinoiu — Practical
+description: A calm white, content-first system with one neutral indigo and a neutral scale derived from the same hue (230), set in Inter.
 colors:
-  green: "#164d43"
-  green-deep: "#103a32"
-  ink: "#172b26"
-  muted: "#4e655d"
-  paper: "#f8faf8"
-  tint: "#eaf0ed"
-  white: "#ffffff"
-  on-green: "#eaf0ed"
-  green-soft: "#c7dbd3"
-  rule: "#c5d2cb"
-  field-border: "#748c7f"
-  error: "#963524"
+  background: "#ffffff"
+  fill: "#f3f4f9"
+  text-strong: "#161c3a"
+  text-weak: "#5b6278"
+  stroke-strong: "#858ca3"
+  stroke-weak: "#e4e6ef"
+  stroke-fill: "#d9dce8"
+  indigo-100: "#e0e3fb"
+  indigo-500: "#5b6aea"
+  indigo-600: "#4250d8"
+  indigo-700: "#3b48c9"
+  error: "#b42318"
+  grid-line: "rgb(91 106 234 / .07)"
 typography:
   display:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
-    fontSize: "clamp(2.8rem, 6.1vw, 5.25rem)"
-    fontWeight: 520
-    lineHeight: 1.08
-    letterSpacing: "-.035em"
-  display-opening:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
-    fontSize: "clamp(2.8rem, 6.1vw, 5.25rem)"
-    fontWeight: 470
-    lineHeight: 1.08
-    letterSpacing: "-.035em"
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
+    fontSize: "clamp(2.4rem, 5vw, 4.5rem)"
+    fontWeight: 600
+    lineHeight: 1.06
+    letterSpacing: "-.03em"
   headline:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
-    fontSize: "clamp(2rem, 3.15vw, 2.8rem)"
-    fontWeight: 520
-    lineHeight: 1.15
-    letterSpacing: "-.026em"
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
+    fontSize: "clamp(1.95rem, 3vw, 2.6rem)"
+    fontWeight: 600
+    lineHeight: 1.14
+    letterSpacing: "-.025em"
   title:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
-    fontSize: "1.45rem"
-    fontWeight: 520
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
+    fontSize: "1.4rem"
+    fontWeight: 600
     lineHeight: 1.3
-    letterSpacing: "-.02em"
+    letterSpacing: "-.018em"
   body:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
     fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.65
+    lineHeight: 1.6
   lead:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
     fontSize: "1.2rem"
     fontWeight: 400
-    lineHeight: 1.65
+    lineHeight: 1.6
+  figure:
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
+    fontSize: "1.15rem"
+    fontWeight: 600
+    lineHeight: 1.35
+    fontVariantNumeric: "tabular-nums"
   label:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
-    fontSize: ".9rem"
-    fontWeight: 520
-    lineHeight: 1.65
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
+    fontSize: ".93rem"
+    fontWeight: 500
+    lineHeight: 1.6
   action:
-    fontFamily: "Commissioner Variable, Commissioner, sans-serif"
-    fontSize: ".95rem"
-    fontWeight: 520
+    fontFamily: "Inter Variable, Inter, system-ui, sans-serif"
+    fontSize: ".97rem"
+    fontWeight: 500
     lineHeight: 1.3
 rounded:
-  control: "4px"
+  control: "8px"
+  form-card: "12px"
 spacing:
   sm: "8px"
   md: "16px"
   lg: "24px"
   xl: "40px"
   section: "clamp(64px, 7.8vw, 112px)"
+motion:
+  duration: "150ms"
+  easing: "cubic-bezier(.16, 1, .3, 1)"
+  press-scale: ".97"
 components:
-  button-dark:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.white}"
+  button-primary:
+    backgroundColor: "{colors.indigo-600}"
+    textColor: "{colors.background}"
     typography: "{typography.action}"
     rounded: "{rounded.control}"
-    padding: "16px 21px"
-  button-dark-hover:
-    backgroundColor: "{colors.green-deep}"
-  button-light:
-    backgroundColor: "{colors.on-green}"
-    textColor: "{colors.green-deep}"
-    typography: "{typography.action}"
+    padding: "14px 20px 14px 22px"
+    minHeight: "52px"
+  button-primary-hover:
+    backgroundColor: "{colors.indigo-700}"
+  button-secondary:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.text-strong}"
+    borderColor: "{colors.stroke-strong}"
     rounded: "{rounded.control}"
-    padding: "16px 21px"
-  button-light-hover:
-    backgroundColor: "{colors.white}"
+  button-secondary-hover:
+    borderColor: "{colors.text-strong}"
   button-disabled:
-    backgroundColor: "{colors.tint}"
-    textColor: "{colors.muted}"
+    backgroundColor: "{colors.fill}"
+    textColor: "{colors.text-weak}"
+    borderColor: "{colors.stroke-weak}"
   text-link:
-    textColor: "{colors.ink}"
-    padding: "7px 0"
+    textColor: "{colors.indigo-700}"
+    decoration: "1px underline at 35% opacity, .3em offset; full opacity on hover"
+    minHeight: "44px"
   field:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.text-strong}"
+    borderColor: "{colors.stroke-strong}"
     rounded: "{rounded.control}"
     padding: "12px 14px"
-    width: "100%"
+    fontSize: "16px"
   navigation:
-    textColor: "{colors.ink}"
-    padding: "9px 0"
+    textColor: "{colors.text-weak}"
+    currentColor: "{colors.text-strong}"
+    currentUnderline: "2px {colors.indigo-600}"
+  nav-contact:
+    borderColor: "{colors.stroke-strong}"
+    rounded: "{rounded.control}"
+  selection-box:
+    stroke: "1.5px {colors.indigo-500}"
+    handles: "8px, white fill, 1.5px indigo-500 border"
+  key-figures:
+    divider: "1px {colors.stroke-weak} vertical rule"
+    typography: "{typography.figure}"
+  project-row:
+    rule: "{colors.stroke-fill}"
+    padding: "32px 0"
   situation-evidence:
-    textColor: "{colors.ink}"
+    rule: "{colors.stroke-weak}"
     padding: "0 0 0 24px"
   service-proof:
-    backgroundColor: "{colors.tint}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.fill}"
+    borderColor: "{colors.stroke-weak}"
+    rounded: "{rounded.control}"
     padding: "24px"
-  project-row:
-    textColor: "{colors.ink}"
-    padding: "32px 0"
   result-panel:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.on-green}"
+    backgroundColor: "{colors.indigo-600}"
+    textColor: "{colors.background}"
+    labelColor: "{colors.indigo-100}"
+    rounded: "{rounded.control}"
     padding: "28px"
 ---
 
@@ -119,137 +141,128 @@ components:
 
 ## Overview
 
-**Creative North Star: "The implementation brief"**
+**Creative North Star: "Practical"**
 
-A concise executive brief makes responsibilities and supporting evidence easy to read. Large, direct statements establish the offer; open rows and unequal columns connect a visitor's situation to relevant work. The personality is precise, human and restrained, expressed through proportion, useful detail and a single sans-serif family.
-
-Deep green creates emphasis while cool pale grounds support sustained reading. Flat sections, thin rules and modestly softened controls keep the interface practical. Copy stays first person, natural and specific. Anonymous employment examples retain their attribution; evidence is part of the reading layout, never decorative proof.
+A calm white page where the words do the work. One neutral indigo carries every action and every point of emphasis; everything else is a neutral scale derived from the same hue. The layout of the previous system is kept almost one to one: broad statements, open ruled rows, responsibility beside evidence, prose capped at 70ch. What changed is the voice of the surface: Inter instead of Commissioner, white instead of pale green paper, indigo instead of deep green, and a single drafting-table detail (the selection box) on the home headline.
 
 **Key Characteristics:**
 
-- Broad statements followed by concrete responsibilities and evidence.
-- One self-hosted type family with restrained weight changes.
-- Flat green, pale and white fields connected by thin rules.
-- Evidence remains readable without hover, disclosure or animation.
-- Open desktop columns become a direct reading sequence on mobile.
+- White ground, one grouped fill band, thin rules. No shadows, no gradients behind content.
+- One indigo, used in three steps with fixed roles (display accent, surface, text).
+- Inter Variable with optical sizing; hierarchy from size and 400/500/600 weights.
+- Evidence readable without hover, disclosure or animation.
+- Open desktop columns become one reading sequence on mobile.
 
-This record describes the implemented five-page frontend in `src/styles/global.css`, `src/layouts/Layout.astro`, the page templates, `Arrow.astro` and `ContactClose.astro`. The approved direction is code-first; there is no approved image comp. The finish review's viewport excerpts are not full-page or exact-color evidence. Source CSS is the token authority. Documentation does not certify deployment, domain configuration or external-profile verification.
+This record describes the implementation in `src/styles/global.css`, `src/layouts/Layout.astro`, the page templates, `Arrow.astro` and `ContactClose.astro`. Source CSS is the token authority; this file mirrors it.
 
 ## Colors
 
-The palette is a cool, muted green family with dark readable ink and pale reading surfaces.
+All colours share hue ~230. Contrast ratios below are measured, not estimated.
 
-### Primary
+### Indigo
 
-- **Deep green** (`green`) owns the home introduction, case-result panels, dark buttons and keyboard focus.
-- **Deeper green** (`green-deep`) strengthens dark-button hover and the text on light buttons and form feedback.
-- **Pale text on green** (`on-green`) serves high-emphasis content on dark fields; **soft green** (`green-soft`) separates supporting copy without changing hue.
+- **Indigo 500** (`#5b6aea`) is the brand colour as seen on the book cover. It is used only where large size makes it legible: the second line of the home headline (4.47:1 on white, display size) and the selection-box stroke. Never for body-size text or under white text (white on it is 4.47:1, below AA).
+- **Indigo 600** (`#4250d8`) is the surface step: primary buttons, the case-result panel, the skip link, the current-page underline. White text on it is 6.23:1.
+- **Indigo 700** (`#3b48c9`) is the text step: links, evidence actions, the index lists, hover colour for row titles, the focus ring and button hover. 7.10:1 on white, 6.47:1 on fill.
+- **Indigo 100** (`#e0e3fb`) is the tint: `::selection`, secondary text inside the result panel (4.91:1 on indigo 600), the field focus halo.
 
 ### Neutral
 
-- **Dark green ink** (`ink`) is the default text color. **Muted green ink** (`muted`) supports descriptions, metadata and field hints.
-- **Cool paper** (`paper`) is the main page ground. **Pale green tint** (`tint`) groups selected work, service proof and form feedback. **White** (`white`) gives fields and dark-button labels their clarity.
-- **Soft rule** (`rule`) divides open rows. **Field border** (`field-border`) gives editable controls a stronger boundary.
-- **Brick error** (`error`) identifies invalid fields and failed-submission feedback; it is functional, not a second brand accent.
+- **Text strong** (`#161c3a`, 16.65:1) for headings and primary reading text.
+- **Text weak** (`#5b6278`, 6.06:1 on white, 5.52:1 on fill) for descriptions, metadata, leads on inner pages and hints.
+- **Stroke strong** (`#858ca3`, 3.35:1) for field borders, the secondary button and the header Contact control: anything editable or pressable needs a 3:1 boundary. (The palette's suggested `#9da3b8` measures 2.51:1 and was darkened for this reason.)
+- **Stroke weak** (`#e4e6ef`) for rules on white. **Stroke on fill** (`#d9dce8`) for rules inside the fill band, where stroke weak disappears.
+- **Fill** (`#f3f4f9`) groups: the Selected delivery experience band, service proof panels, certifications, form notice and status, mobile evidence blocks.
+- **Error** (`#b42318`, 6.57:1) is functional only.
 
-**The Role Before Decoration Rule.** Use green fields for introductions, supported results and actions; keep the long reading passages on pale ground with dark ink.
-
-The separate `tint` and `on-green` names intentionally share one source value but preserve different roles. The sidecar's synthesized tonal strips are palette previews, not additional production colors.
+**The One Indigo Rule.** Indigo means "this is an action or the one thing to notice". It never decorates a rule, a background band or an icon that is not interactive.
 
 ## Typography
 
-**Display Font:** Commissioner Variable, Commissioner, sans-serif.
-**Body Font:** Commissioner Variable, Commissioner, sans-serif.
-
-Commissioner is self-hosted through the project's font package. Its open forms and intermediate weights provide a precise but approachable voice without a second display or monospace family.
+**Family:** Inter Variable (`@fontsource-variable/inter/opsz.css`), self-hosted, weight and optical-size axes. `font-optical-sizing: auto` gives the display cut at heading sizes and the text cut at body size from one file per subset.
 
 ### Hierarchy
 
-- **Display** uses the fluid display token for primary page statements. The home introduction uses the lighter opening variant; About and Contact use their existing, slightly smaller fluid limits.
-- **Headline** introduces major sections with balanced wrapping and tight leading.
-- **Title** carries row and subsection headings. Situation titles scale fluidly on desktop; project titles stay compact.
-- **Body** carries the reading surface, with long prose capped at 70ch and shorter explanatory passages around 55–65ch.
-- **Lead** gives page introductions a modest size increase, without competing with the heading.
-- **Label** identifies fields in sentence case. Case metadata and attribution use smaller supporting text, not heading eyebrows.
-- **Action** uses medium weight and a compact line-height in buttons. Text links use a similar weight with a persistent bottom rule.
+- **Display** `clamp(2.4rem, 5vw, 4.5rem)`, 600, -0.03em, 1.06. Home on mobile: `clamp(2.05rem, 9.4vw, 3.8rem)`. About and Contact cap at 4.1rem.
+- **Headline** `clamp(1.95rem, 3vw, 2.6rem)`, 600, -0.025em. Service and case headings use slightly smaller fluid limits.
+- **Title** 1.4rem, 600 (row titles fluid `clamp(1.3rem, 1.9vw, 1.65rem)` in situations, 1.45rem in project rows).
+- **Body** 17px / 1.6 (16px under 760px). **Lead** 1.2rem / 1.6 in text weak on inner pages; the home intro paragraph stays in text strong because it is the main statement.
+- **Figure** 1.15rem / 600 with `tabular-nums`, for the three home key figures and project-row titles only. Inter's tabular feature also widens hyphens ("12 - month"), so it is not applied to prose, scope lines or footers.
+- **Label / action** 500. No weight below 400; weights never change on hover or selection.
 
-**The One Family Rule.** Build hierarchy with Commissioner, size, spacing and the implemented weight differences; do not introduce a competing display face.
-
-Small metadata is ancillary. Keep essential responsibilities and evidence descriptions at body or near-body scale rather than promoting attribution sizes into general prose.
+Global text settings: `-webkit-font-smoothing: antialiased`, `text-rendering: optimizeLegibility`, `-webkit-text-size-adjust: 100%`, `text-wrap: balance` on headings, `pretty` on paragraphs.
 
 ## Layout
 
-The shared container is centered with a maximum width of 1280px and a width of `100% - 112px`. At widths up to 1050px, it uses `100% - 72px`; up to 760px, it uses `100% - 40px`. The header stays in normal document flow. The section spacing token establishes the broad rhythm; internal spacing uses the recorded small scale plus component-specific measurements.
+Container: `min(100% - 112px, 1280px)`; `100% - 72px` up to 1050px; `100% - 40px` up to 760px. Section rhythm `clamp(64px, 7.8vw, 112px)`, 64px on mobile. Prose 70ch.
 
-The primary spatial pattern is open paired columns: responsibility beside evidence, a heading beside explanation, or case context beside narrative. Home situations use a 1.5:1 proportion, while case studies use 1:1.27. Thin rules separate entries; content does not rely on boxed cards. Case headings become sticky only from 1100px upward, with 36px top clearance.
+Home order is fixed: header, intro (headline, intro copy, engagement line, two actions, domain aside, three key figures), Selected delivery experience on the fill band (four rows and source note), engagement, Where I can help (seven rows), contact close, footer.
 
-At 1050px, gaps tighten, the project category column is omitted, and paired form fields stack. At 760px, substantive columns become one reading sequence; each evidence block follows its situation. The home domain aside follows the main copy and actions; contract wording stays in the main introduction at every width. Body text becomes 16px and section rhythm becomes 64px. Display headings use page-specific mobile sizes, with the home heading at `clamp(2.05rem, 9vw, 3.8rem)` and safe wrapping for long words.
+Paired columns carry the content: 1.7:1 in the intro, 1.5:1 in situations, 1:1.27 in case studies, 1:1.08 in service details. Case headers become sticky from 1100px. At 1050px the project category column is dropped and form pairs stack. At 760px everything becomes one reading sequence; evidence follows its situation as a filled block; key figures stack with horizontal rules.
 
-**The Adjacent Evidence Rule.** Keep the supporting example next to its responsibility on wide screens and immediately after it on narrow screens. Focus and hover may reinforce the connection but never reveal required content.
+**The Adjacent Evidence Rule.** Evidence sits beside its responsibility on wide screens and directly after it on narrow screens.
 
 ## Elevation & Depth
 
-The implemented system has no shadows, gradients or blur. Solid color fields, whitespace, typography and one-pixel rules create hierarchy. A service proof panel is a flat tinted insert; a case result is a flat green insert. Neither floats above the document.
-
-**The Flat Surface Rule.** Preserve the contrast between open ruled rows and solid tonal inserts; do not add floating-card depth to these patterns.
+Flat. Hierarchy comes from the white/fill contrast, 1px rules and type. The only background pattern is the intro grid (24px, 1px lines at 7% indigo 500), masked to fade in below the header and out before the key figures, and only on the home intro. It never sits behind reading text elsewhere.
 
 ## Shapes
 
-Sections and evidence panels are rectangular. Only editable controls and filled buttons use the small control radius. Borders are thin and quiet; fields have a stronger boundary than reading dividers. There are no pills or ornamental clipped shapes.
+8px radius on every control and evidence surface (buttons, fields, header Contact, proof panels, result panels, certification block). 12px on the contact form card, which wraps the 8px fields. Sections and rows stay rectangular and open. The arrow is the shared code-authored SVG; the favicon is an indigo rounded square that switches to indigo-300 with a navy mark under `prefers-color-scheme: dark`.
 
-The shared arrow is a code-authored, current-color SVG with a round stroke, normally 20px square. The upward-right variant rotates the same path; smaller evidence and contents links use 16–17px instances. The menu icon and favicon are also code-authored SVG. There are no shipping raster assets, portraits, client logos or decorative project mockups.
+### Signature: the selection box
+
+On the home headline only, the word "implementation" is framed like a selected layer in a design tool: a 1.5px indigo 500 outline with four 8px square handles (white fill, indigo border) at the corners. Drawn with two pseudo-elements and background layers, `pointer-events: none`, no animation. The wrapper is `inline-block`, so the word never splits; under 760px the handles shrink to 7px and the box still fits a 390px viewport. Do not reuse it elsewhere.
 
 ## Components
 
 ### Buttons
 
-Filled buttons are direct and calm, with a small radius, text and a right arrow. Dark buttons sit on pale ground; light buttons sit in the green opening. They have a minimum height of 54px, with horizontal content spacing of 30px. On mobile, padding becomes `15px 18px`, the gap becomes 20px and text becomes `.88rem`.
-
-Hover changes the fill using the corresponding recorded variant. Active press applies a slight brightness reduction. Disabled buttons use tint, muted text and a rule border. The submitting state changes the label to “Sending…” and disables repeated submission. State transitions use 220ms and `cubic-bezier(.16, 1, .3, 1)`; reduced-motion preferences remove transitions.
+Primary: indigo 600, white label, 8px radius, 52px minimum height, arrow at right. Secondary: white with a stroke-strong border and a text-strong label. Hover (pointer devices only) darkens primary to indigo 700 and sharpens the secondary border; the arrow moves 2px. Press scales to .97 over 150ms. Disabled: fill, text weak, stroke weak. `user-select: none` on labels.
 
 ### Text links
 
-Standalone actions pair medium-weight text with the same SVG arrow and a thin bottom rule. Regular prose links stay underlined; hover increases underline thickness. Link text names the destination or the relevant example rather than relying on an icon.
-
-### Inputs / Fields
-
-Labels sit above white fields, with optional status embedded in the label. Input height is at least 50px; the textarea starts at 180px and resizes vertically. Hover turns the border green. Keyboard focus uses a two-pixel green outline with a two-pixel offset for controls; other focusable elements use a five-pixel offset. Focus in the green opening switches to pale text color.
-
-Invalid fields combine the error border with associated written feedback. Hints and errors sit directly below the control. Submission feedback uses a flat tinted block, a live status region and focus after a result. Do not expose the recipient email or add direct-email options. Keep the LinkedIn links. Failure preserves the message for retry. Accepted submission resets the form; the success text claims submission, not independently confirmed inbox delivery.
+Indigo 700, weight 500, 1px underline at 35% opacity with .3em offset; underline goes to full colour on hover. Arrows translate 2px (diagonal arrows move up-right). Minimum target 44px.
 
 ### Navigation
 
-The text wordmark has a smaller descriptive second line. Five plain text destinations run across the desktop header; the current page is underlined and Contact has a bottom rule and diagonal arrow. Hover adds green and underline. The header uses a 112px minimum height, reducing to 90px on mobile.
+Wordmark in text strong with a text-weak second line. Nav links in text weak, text strong on hover; the current page is text strong with a 2px indigo 600 underline. Contact is an outlined 8px control with a diagonal arrow; when current, its border becomes indigo. On mobile the Menu button is an outlined control that tints when expanded and reveals a ruled vertical list; the script behaviour is unchanged.
 
-On mobile, the script-enhanced Menu button reveals an in-flow vertical list with a top rule. It reports expanded state, closes on Escape, navigation or outside click, and returns focus to its toggle on Escape. Without enhancement, navigation remains visible. A keyboard-visible skip link reaches the main content.
+### Key figures
 
-### Situation and evidence rows
+Three cells in a 3-column grid separated by 1px vertical rules in stroke weak, under a horizontal rule. Figure in text strong 1.15rem/600 tabular; description in text weak. Mobile: stacked, separated by horizontal rules.
 
-The signature row pairs a linked situation heading and explanation with an evidence title and explicit evidence link. Homepage rows use compact evidence links; Services retains the supporting detail. A left rule and inset distinguish the evidence on desktop; mobile removes that rule and inset. Hover or focus anywhere in the row turns the evidence boundary and title green. The evidence link lands on a named case or working-practice anchor. Four situations represent alternative reasons to engage, not numbered methodology stages.
+### Rows
 
-### Proof and result inserts
+Project rows, situation rows and working rows are open and ruled. Hover changes only two things: the title turns indigo 700 and the arrow moves 2px. Situation evidence keeps its left rule on desktop and becomes a filled block on mobile; "Read the example" is indigo 700.
 
-Service evidence uses a flat tinted panel with a title, description and arrow link. Its padding reduces from the recorded desktop value to 20px on mobile. Case responsibility and result precede the longer narrative. Results use green with pale text, a quiet “Result” field label and a larger statement; their padding reduces to 24px on mobile. These labels describe real content fields and do not establish a heading-eyebrow style.
+### Evidence panels
 
-### Project rows and contact close
+Service proof: fill, 1px stroke weak, 8px radius, title in text strong, description in text weak, indigo link. Case result: indigo 600 surface, white statement at 1.3rem/500, "Result" label and the note in indigo 100.
 
-Project links form open ruled rows with category, title, description and diagonal arrow. On hover the title underlines. The category is removed at the middle breakpoint and the text stacks at the narrow breakpoint. The repeated contact close remains a two-column heading and invitation separated from prior content by a top rule, becoming one column on mobile.
+### Fields and form
+
+Labels above fields at 500. Fields: white, stroke strong border, 8px radius, 16px text (no iOS zoom), 50px minimum height, textarea 180px. Hover border text weak; focus is an indigo 600 border plus a 4px indigo 100 halo. Invalid fields use the error border plus written feedback. The form sits in a white card with a 1px stroke weak border and 12px radius. Status and notice messages use the fill surface.
+
+### Focus and states
+
+Focus: `box-shadow: 0 0 0 2px #fff, 0 0 0 4px indigo-700` (follows border radius), with a transparent outline kept for forced-colours mode. All hover styles are inside `@media (hover: hover)`; touch devices get `:active` colour or scale feedback instead of the tap highlight. Reduced motion removes transitions and smooth scrolling.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** connect specific responsibilities to nearby, named evidence.
-- **Do** use the self-hosted Commissioner family and the recorded green, ink and pale-ground roles.
-- **Do** preserve open rows, thin rules, flat inserts and comfortable prose widths.
-- **Do** keep evidence and actions available without hover, with visible keyboard focus and reduced-motion support.
-- **Do** use restrained first-person copy and keep anonymous employment attribution visible beside project evidence.
-- **Do** keep the 20,000-user figure attached to launch scope wherever that example appears.
+- **Do** keep indigo for actions and the single emphasis on each screen.
+- **Do** use text weak for supporting copy and keep reading text at 4.5:1 or better on its actual surface.
+- **Do** keep open rows, thin rules, flat inserts and comfortable prose widths.
+- **Do** keep evidence beside (or directly after) the responsibility it supports.
+- **Do** keep every interactive target at 44px or more.
 
 ### Don't:
 
-- **Don't** replace the responsibility-to-evidence rows with a generic icon-card grid or a numbered process.
-- **Don't** add heading eyebrows, decorative metrics, floating shadows or gradients to this world.
-- **Don't** introduce glyph icons, a second display face, fabricated client logos, testimonials or project imagery.
-- **Don't** turn launch scope into active usage, adoption or ROI, or present employment work as independent consulting engagements.
-- **Don't** hide essential content behind animation, hover or disclosure, or imply inbox delivery from service acceptance alone.
+- **Don't** put white text on indigo 500, or indigo 500 text below display size.
+- **Don't** use the grid pattern or the selection box anywhere other than the home intro.
+- **Don't** add shadows, gradients, icon packs, client logos, testimonials, decorative numbers or a second typeface.
+- **Don't** animate colour changes on trivial hovers, or exceed 200ms on any interaction.
+- **Don't** apply `tabular-nums` to running text.
+- **Don't** change copy; text is frozen.

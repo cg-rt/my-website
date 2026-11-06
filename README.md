@@ -91,7 +91,7 @@ Generated output, dependencies, local environment files and internal project not
 
 ## Assets
 
-Commissioner is self-hosted through Fontsource. Its license is included in `public/commissioner-OFL.txt`.
+Inter is self-hosted through Fontsource. Its license is included in `public/inter-OFL.txt`.
 
 The icons and favicon are SVG assets.
 

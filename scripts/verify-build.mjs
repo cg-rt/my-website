@@ -32,7 +32,7 @@ assert.ok(!contact.includes('The form is currently unavailable.'), 'Production f
 assert.ok((await readFile(join(root, 'CNAME'), 'utf8')).trim() === 'cosmin-ghinoiu.com');
 const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
 assert.equal((sitemap.match(/<loc>/g) || []).length, 5);
-const allowed = new Set(['index.html', 'services', 'portfolio', 'selected-work', 'about', 'contact', '404.html', 'CNAME', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'commissioner-OFL.txt', '_astro']);
+const allowed = new Set(['index.html', 'services', 'portfolio', 'selected-work', 'about', 'contact', '404.html', 'CNAME', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'inter-OFL.txt', '_astro']);
 for (const name of await readdir(root)) {
   // Astro can leave empty prerender directories after removing its server files.
   if (name === '.prerender') {

@@ -16,3 +16,6 @@ dist/
 /.impeccable/surfaces/
 BACKUP/
 BACKUPS/
+
+# Local redesign previews (not part of the site).
+/redesign/
