@@ -28,7 +28,18 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/portfolio/', 
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header section-wrap">
-      <a class="wordmark" href="/" aria-label="Cosmin Ghinoiu — Home">Cosmin Ghinoiu<span>Client delivery & implementation</span></a>
+      <a class="wordmark wm-plan wm-term wm-scan" href="/" aria-label="Cosmin Ghinoiu — Home">
+        <svg class="plan-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true" focusable="false">
+          <rect class="plan-tile" width="40" height="40" rx="10" />
+          <path class="plan-grid" d="M12.5 8v24M20 8v24M27.5 8v24" />
+          <rect class="plan-bar" style="--t:.06s;--d:.56s" x="6.5" y="10" width="14" height="4.5" rx="2.25" />
+          <rect class="plan-bar" style="--t:.3s;--d:.48s" x="12.5" y="17.75" width="12" height="4.5" rx="2.25" />
+          <rect class="plan-bar" style="--t:.54s;--d:.32s" x="18.5" y="25.5" width="8" height="4.5" rx="2.25" />
+          <path class="plan-milestone" d="M32 24.25l3.5 3.5-3.5 3.5-3.5-3.5z" />
+          <line class="plan-now" x1="5" y1="6.5" x2="5" y2="33.5" />
+        </svg>
+        <span class="wm-text"><span class="wm-name">Cosmin Ghinoiu</span><span class="wm-sub"><span class="term-prompt" aria-hidden="true">›</span><span class="term-role">Client delivery &amp; implementation</span><span class="term-caret" aria-hidden="true"></span></span></span>
+      </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden><span>Menu</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg></button>
       <nav id="main-nav" aria-label="Main navigation">
         {navigation.map(([href, label]) => <a href={href} aria-current={current === href ? 'page' : undefined} class:list={[{ 'nav-contact': href === '/contact/' }]}>{label}{href === '/contact/' && <Arrow direction="up-right" />}</a>)}
@@ -64,6 +75,109 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/portfolio/', 
         window.addEventListener('scroll', write, { passive: true });
         document.addEventListener('mouseleave', () => { on = false; lamp.classList.remove('is-on'); });
         document.addEventListener('visibilitychange', () => { if (document.hidden) { on = false; lamp.classList.remove('is-on'); } });
+      }
+      const plan = document.querySelector<HTMLElement>('.wm-plan');
+      if (plan && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let busy = false;
+        const play = (first = false) => {
+          if (busy) return;
+          busy = true;
+          plan.classList.remove('is-playing');
+          void plan.offsetWidth;
+          plan.classList.add('is-playing');
+          if (first) plan.classList.add('is-first');
+          window.setTimeout(() => { busy = false; plan.classList.remove('is-first'); }, 1500);
+        };
+        play(true);
+      }
+      const term = document.querySelector<HTMLElement>('.wm-term');
+      const termRole = term?.querySelector<HTMLElement>('.term-role');
+      if (term && termRole && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const roles = ['Implementation', 'Client delivery', 'Service delivery', 'Customer success'];
+        let text = termRole.textContent ?? '';
+        let target = '';
+        let next = 0;
+        let mode: 'delete' | 'type' = 'delete';
+        let timer = 0;
+        let inView = true;
+        let stalled = false;
+        if (window.matchMedia('(max-width: 760px)').matches) { text = ''; termRole.textContent = ''; mode = 'type'; target = roles[next++]; }
+        term.classList.add('is-live');
+        const schedule = (ms: number) => { timer = window.setTimeout(step, ms); };
+        function step() {
+          timer = 0;
+          if (!inView || document.hidden) { stalled = true; return; }
+          term!.classList.add('is-typing');
+          if (mode === 'delete') {
+            if (text.length) { text = text.slice(0, -1); termRole!.textContent = text; schedule(26); return; }
+            mode = 'type'; target = roles[next]; next = (next + 1) % roles.length; schedule(280); return;
+          }
+          if (text.length < target.length) { text = target.slice(0, text.length + 1); termRole!.textContent = text; schedule(48 + Math.random() * 46); return; }
+          term!.classList.remove('is-typing');
+          mode = 'delete';
+          schedule(2600);
+        }
+        const resume = () => { if (stalled && inView && !document.hidden && !timer) { stalled = false; schedule(350); } };
+        new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; term.classList.toggle('is-paused', !inView); resume(); }).observe(term);
+        document.addEventListener('visibilitychange', resume);
+        schedule(mode === 'type' ? 600 : 1800);
+      }
+      const scan = document.querySelector<HTMLElement>('.wm-scan');
+      if (scan && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const glyphs = '01<>/{}[]=+*#%&$';
+        const scanName = scan.querySelector<HTMLElement>('.wm-name')!;
+        let scanning = false;
+        const pass = (el: HTMLElement, perChar: number, delay: number, withBar: boolean) => new Promise<void>((resolve) => {
+          const text = el.textContent ?? '';
+          el.textContent = '';
+          el.classList.remove('is-done');
+          const chars = Array.from(text, (ch) => { const s = document.createElement('span'); s.className = 'scan-ch'; s.textContent = ch; el.append(s); return s; });
+          for (const s of chars) s.style.width = `${s.getBoundingClientRect().width}px`;
+          let bar: HTMLElement | null = null;
+          let trail: HTMLElement | null = null;
+          if (withBar) {
+            trail = document.createElement('span'); trail.className = 'scan-trail';
+            bar = document.createElement('span'); bar.className = 'scan-bar';
+            el.append(trail, bar);
+          }
+          const span = 3;
+          let start = 0;
+          let lastSwap = 0;
+          const frame = (now: number) => {
+            if (!start) start = now + delay;
+            const front = Math.max(0, (now - start) / perChar);
+            const swap = now - lastSwap > 50;
+            if (swap) lastSwap = now;
+            chars.forEach((s, k) => {
+              const active = k < front && k >= front - span && text[k] !== ' ';
+              if (active) {
+                s.classList.add('is-glitch');
+                if (swap) s.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+              } else if (s.classList.contains('is-glitch')) {
+                s.classList.remove('is-glitch');
+                s.textContent = text[k];
+              }
+            });
+            if (bar && trail) {
+              const idx = Math.min(chars.length, Math.ceil(front));
+              const x = idx === 0 ? 0 : chars[idx - 1].offsetLeft + chars[idx - 1].offsetWidth;
+              bar.style.transform = `translateX(${x}px)`;
+              trail.style.transform = `scaleX(${x / el.clientWidth})`;
+            }
+            if (front - span < chars.length) { requestAnimationFrame(frame); return; }
+            el.classList.add('is-done');
+            window.setTimeout(() => { el.textContent = text; resolve(); }, withBar ? 320 : 0);
+          };
+          requestAnimationFrame(frame);
+        });
+        const run = async () => {
+          if (scanning) return;
+          scanning = true;
+          await pass(scanName, 58, 0, true);
+          scanning = false;
+        };
+        scan.addEventListener('pointerenter', run);
+        scan.addEventListener('focus', run);
       }
       const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
       const nav = document.querySelector<HTMLElement>('#main-nav');
