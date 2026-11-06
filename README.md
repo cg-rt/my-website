@@ -44,7 +44,7 @@ pnpm exec astro preview stop
 | Homepage | `src/pages/index.astro` |
 | Services page | `src/pages/services.astro` |
 | Service descriptions | `src/data/services.ts` |
-| Selected Work page | `src/pages/selected-work.astro` |
+| Portfolio page | `src/pages/portfolio.astro` |
 | Case studies | `src/content/work/*.md` |
 | About page | `src/pages/about.astro` |
 | Contact page | `src/pages/contact.astro` |
@@ -53,7 +53,7 @@ pnpm exec astro preview stop
 | Styles | `src/styles/global.css` |
 | Design system | `DESIGN.md` |
 
-Keep case-study IDs stable because other pages link directly to them.
+Keep case-study IDs stable because other pages link directly to them. `/selected-work/` redirects to `/portfolio/` (configured in `astro.config.mjs`); keep the redirect, since older links point there.
 
 ## Contact form
 
@@ -94,3 +94,7 @@ Generated output, dependencies, local environment files and internal project not
 Commissioner is self-hosted through Fontsource. Its license is included in `public/commissioner-OFL.txt`.
 
 The icons and favicon are SVG assets.
+
+## Related
+
+Saved tools, skills, libraries, datasets and methods live in `../Tools and Bookmarks/` (read-only from here): before searching the web for one, scan the Tasks block at the top of its `catalog.md` or run `hive find "<task terms>" --vault tools` from HIVE; a hit is a candidate with its saved limitations, not a recommendation.

@@ -9,6 +9,6 @@ result: "50,000+ documents and metadata migrated into 25 configured SaaS content
 
 ### Making the data and workflows usable
 
-I worked with the client to obtain and normalize its legacy documents and metadata, design custom fields and library structure, and configure client-specific workflows. Duplicate checks, exception reviews and QA covered the data, libraries and workflows, with Product, business and Support teams involved where needed.
+I worked with the client to obtain and normalize its legacy documents and metadata, design custom fields and library structure, and configure client-specific workflows. Duplicate checks, exception reviews and QA covered the data, libraries and workflows, with Product, business and Support teams involved where needed. Where Excel wasn’t enough, I wrote C# scripts to split fields, normalize dates so day and month couldn’t be swapped on import, skip superseded versions and clean fields by rule.
 
 This was a separate engagement from the enterprise AI pilot.

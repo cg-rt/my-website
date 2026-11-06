@@ -3,7 +3,7 @@ import { resolve, join } from 'node:path';
 import assert from 'node:assert/strict';
 
 const root = resolve('dist');
-const routes = ['index.html', 'services/index.html', 'selected-work/index.html', 'about/index.html', 'contact/index.html', '404.html'];
+const routes = ['index.html', 'services/index.html', 'portfolio/index.html', 'about/index.html', 'contact/index.html', '404.html'];
 const pages = new Map(await Promise.all(routes.map(async route => [route, await readFile(join(root, route), 'utf8')])));
 const titles = new Set();
 for (const [route, html] of pages) {
@@ -32,7 +32,7 @@ assert.ok(!contact.includes('The form is currently unavailable.'), 'Production f
 assert.ok((await readFile(join(root, 'CNAME'), 'utf8')).trim() === 'cosmin-ghinoiu.com');
 const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
 assert.equal((sitemap.match(/<loc>/g) || []).length, 5);
-const allowed = new Set(['index.html', 'services', 'selected-work', 'about', 'contact', '404.html', 'CNAME', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'commissioner-OFL.txt', '_astro']);
+const allowed = new Set(['index.html', 'services', 'portfolio', 'selected-work', 'about', 'contact', '404.html', 'CNAME', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'commissioner-OFL.txt', '_astro']);
 for (const name of await readdir(root)) {
   // Astro can leave empty prerender directories after removing its server files.
   if (name === '.prerender') {
@@ -53,4 +53,6 @@ async function verifyContactPrivacy(directory) {
   }
 }
 await verifyContactPrivacy(root);
+const redirect = await readFile(join(root, 'selected-work/index.html'), 'utf8');
+assert.ok(redirect.includes('/portfolio/'), 'Old Selected Work address does not redirect to Portfolio');
 console.log('Verified 5 pages + 404, metadata, local links/anchors, form endpoint, custom domain, sitemap, public-output boundaries, and recipient email privacy.');

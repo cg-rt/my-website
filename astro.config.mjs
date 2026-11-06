@@ -5,4 +5,5 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   devToolbar: { enabled: false },
+  redirects: { '/selected-work/': '/portfolio/' },
 });
