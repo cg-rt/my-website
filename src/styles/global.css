@@ -26,7 +26,7 @@
     --fill: #f3f4f9;
     --background: #ffffff;
     --error: #b42318;
-    --grid-line: rgb(91 106 234 / .07);
+    --grid-line: rgb(91 106 234 / .13);
     --font-body: 'Inter Variable', 'Inter', system-ui, sans-serif;
     --font-display: clamp(2.4rem, 5vw, 4.5rem);
     --font-heading: clamp(1.95rem, 3vw, 2.6rem);
@@ -90,7 +90,7 @@
 
   /* Home intro: white canvas with a faint 24px grid */
   .home-intro { position: relative; isolation: isolate; border-bottom: 1px solid var(--stroke-weak); }
-  .home-intro::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px); background-size: 24px 24px; background-position: center top; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 120px, #000 45%, transparent 82%); mask-image: linear-gradient(to bottom, transparent 0, #000 120px, #000 45%, transparent 82%); }
+  .home-intro::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px); background-size: 24px 24px; background-position: center top; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 120px, #000 45%, transparent 82%), radial-gradient(440px circle at var(--lx, -2000px) calc(var(--py, -2000px) - var(--hero-top, 0px)), #000 0%, rgb(0 0 0 / .5) 55%, rgb(0 0 0 / .5) 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 120px, #000 45%, transparent 82%), radial-gradient(440px circle at var(--lx, -2000px) calc(var(--py, -2000px) - var(--hero-top, 0px)), #000 0%, rgb(0 0 0 / .5) 55%, rgb(0 0 0 / .5) 100%); -webkit-mask-composite: source-in; mask-composite: intersect; }
   .home-intro .section-wrap { padding-top: 76px; padding-bottom: 56px; }
   .home-intro h1 { max-width: 1100px; }
   .home-intro h1 > span { color: var(--indigo-500); }
@@ -284,6 +284,10 @@
     .project-row:hover > .arrow, .situation-main h3 a:hover .arrow { color: var(--indigo-700); }
     input:hover, textarea:hover { border-color: var(--text-weak); }
   }
+
+  .cursor-lamp { position: fixed; left: -560px; top: -560px; width: 1120px; height: 1120px; border-radius: 50%; z-index: 40; pointer-events: none; opacity: 0; transform: translate3d(var(--lx, -2000px), var(--ly, -2000px), 0); will-change: transform; mix-blend-mode: multiply; background: radial-gradient(circle, rgb(91 106 234 / .2) 0%, rgb(91 106 234 / .08) 28%, rgb(91 106 234 / 0) 60%); transition: opacity 200ms var(--ease-out); }
+  .cursor-lamp.is-on { opacity: 1; }
+  @media print { .cursor-lamp { display: none; } }
 }
 
 @layer responsive {

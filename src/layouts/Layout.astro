@@ -34,6 +34,7 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/portfolio/', 
         {navigation.map(([href, label]) => <a href={href} aria-current={current === href ? 'page' : undefined} class:list={[{ 'nav-contact': href === '/contact/' }]}>{label}{href === '/contact/' && <Arrow direction="up-right" />}</a>)}
       </nav>
     </header>
+    <div class="cursor-lamp" aria-hidden="true" hidden></div>
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer section-wrap">
       <div><a class="footer-name" href="/">Cosmin Ghinoiu</a><p>Senior client delivery and implementation lead.<br />Permanent and contract roles, and defined projects.</p></div>
@@ -41,6 +42,29 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/portfolio/', 
       <div class="footer-bottom"><span>© {new Date().getFullYear()} Cosmin Ghinoiu</span><span>Clear plans. Shared ownership. Follow-through.</span></div>
     </footer>
     <script>
+      const lamp = document.querySelector<HTMLElement>('.cursor-lamp');
+      if (lamp && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const root = document.documentElement;
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const hero = document.querySelector<HTMLElement>('.home-intro');
+        const setHero = () => { if (hero) root.style.setProperty('--hero-top', `${hero.getBoundingClientRect().top + window.scrollY}px`); };
+        let tx = -2000, ty = -2000, x = tx, y = ty, raf = 0, on = false;
+        const write = () => { root.style.setProperty('--lx', `${x}px`); root.style.setProperty('--ly', `${y}px`); root.style.setProperty('--py', `${y + window.scrollY}px`); };
+        const paint = () => { x += (tx - x) * 0.18; y += (ty - y) * 0.18; write(); raf = Math.abs(tx - x) > 0.3 || Math.abs(ty - y) > 0.3 ? requestAnimationFrame(paint) : 0; };
+        lamp.hidden = false;
+        setHero();
+        window.addEventListener('resize', setHero);
+        window.addEventListener('pointermove', (event) => {
+          if (event.pointerType !== 'mouse') return;
+          tx = event.clientX; ty = event.clientY;
+          if (!on) { on = true; x = tx; y = ty; lamp.classList.add('is-on'); }
+          if (reduce) { x = tx; y = ty; write(); return; }
+          if (!raf) raf = requestAnimationFrame(paint);
+        }, { passive: true });
+        window.addEventListener('scroll', write, { passive: true });
+        document.addEventListener('mouseleave', () => { on = false; lamp.classList.remove('is-on'); });
+        document.addEventListener('visibilitychange', () => { if (document.hidden) { on = false; lamp.classList.remove('is-on'); } });
+      }
       const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
       const nav = document.querySelector<HTMLElement>('#main-nav');
       if (toggle && nav) {
