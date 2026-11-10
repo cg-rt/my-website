@@ -8,13 +8,13 @@ result: "The pilot met its success criteria, launched globally for 20,000 users 
 resultNote: "20,000 describes launch scope, not a measured active-user count."
 ---
 
-### Working through the delivery constraints
+### Running the pilot and fixing the AI answers
 
 The client was evaluating an AI-powered scientific-literature platform under licensed-content constraints. I structured the pilot around incremental delivery and feedback: demonstrations, workshops, Q&A and train-the-trainer sessions, with 60 power users before the wider launch. Part of the pilot was moving about 700,000 documents from the previous vendor in 40 days, in phases, so the platform could go live with the first batches while the remaining deltas were processed.
 
-When the AI answers fell short of what the client expected mid-pilot, I didn’t manage expectations down. I ran evaluation sessions with the client on answer quality, accuracy, hallucination limits and speed, and worked with the engineers on guardrails, retrieval settings and the system prompt so that answers stayed grounded in licensed sources, with citations. We shortened the QA and demonstration cycle so the client could assess working software, and ran load and performance tests with the product team before scale-up.
+When the AI answers fell short of what the client expected mid-pilot, I kept the client’s bar where it was and worked on the answers. I ran evaluation sessions with the client on answer quality, accuracy, hallucination limits and speed, and worked with the engineers on guardrails, retrieval settings and the system prompt so that answers stayed grounded in licensed sources, with citations. We shortened the QA and demonstration cycle so the client could assess working software, and ran load and performance tests with the product team before scale-up.
 
-The July 2026 launch date was maintained. The implementation approach, tracking framework and presentation materials became reusable assets for colleagues. My responsibility was implementation and cross-functional delivery, not model development.
+We launched in July 2026, on the planned date. Colleagues later reused my implementation approach, tracking framework and presentation materials. I was responsible for the implementation and the cross-functional delivery; the engineers did the model development.
 
 ### A second rollout
 

@@ -12,4 +12,4 @@ resultNote: "10,000 describes account scope, not measured active use."
 
 A twelve-month technical account review established how the existing setup worked and what needed to change. The consolidation involved different regional requirements, interpreters and multiple time zones.
 
-I worked through conflicting requirements with the relevant groups, established who needed to contribute to each decision and who needed to approve it, and kept actions visible across the implementation. That connected the technical review to configuration decisions the stakeholders could sign off.
+I worked through conflicting requirements with the regional teams, established who needed to contribute to each decision and who needed to approve it, and kept actions visible across the implementation. That’s how the findings from the review became configuration decisions all the stakeholders signed off.
