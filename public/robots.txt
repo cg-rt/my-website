@@ -1,4 +1,62 @@
-User-agent: *
+# This site opts out of search indexing and of any AI or LLM use
+# (training, retrieval, answers, summaries).
+#
+# Search crawlers are allowed to fetch pages only so they can read the
+# "noindex" directive on every page and drop the site from their results.
+# Blocking them here would hide that directive and leave bare URLs listed.
+
+User-agent: Googlebot
+User-agent: bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: Yandex
+User-agent: Baiduspider
+User-agent: Slurp
 Allow: /
 
-Sitemap: https://cosmin-ghinoiu.com/sitemap.xml
+# No image search.
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+Disallow: /
+
+# AI and LLM crawlers, training opt-out tokens, and AI assistant fetchers.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: anthropic-ai
+User-agent: claude-web
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Google-CloudVertexBot
+User-agent: Applebot-Extended
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: FacebookBot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: YouBot
+User-agent: AI2Bot
+User-agent: Diffbot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: webzio-extended
+User-agent: ImagesiftBot
+User-agent: Timpibot
+User-agent: PetalBot
+User-agent: Kangaroo Bot
+User-agent: ICC-Crawler
+Disallow: /
+
+# Everything else.
+User-agent: *
+Disallow: /

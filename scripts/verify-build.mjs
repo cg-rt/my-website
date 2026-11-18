@@ -13,6 +13,7 @@ for (const [route, html] of pages) {
   assert.ok(/<html lang="en"/.test(html), `${route}: missing language`);
   assert.ok(html.includes('name="description"'), `${route}: missing description`);
   assert.ok(html.includes('rel="canonical"'), `${route}: missing canonical`);
+  assert.ok(/<meta name="robots" content="noindex, nofollow, noarchive, nosnippet[^"]*noai, noimageai"/.test(html), `${route}: missing noindex/noai directive`);
   assert.ok(!/Direction contract|impeccable:|Evidence Bank|\/Users\/C\/|20,000 active users/i.test(html), `${route}: internal or unsupported content leaked`);
   for (const match of html.matchAll(/(?:href|src)="(\/[^"\s]*)"/g)) {
     const url = new URL(match[1], 'https://cosmin-ghinoiu.com');
@@ -30,9 +31,11 @@ const contact = pages.get('contact/index.html');
 assert.ok(contact.includes('https://formspree.io/f/xppwqlza'), 'Production form endpoint missing');
 assert.ok(!contact.includes('The form is currently unavailable.'), 'Production form unavailable');
 assert.ok((await readFile(join(root, 'CNAME'), 'utf8')).trim() === 'cosmin-ghinoiu.com');
-const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
-assert.equal((sitemap.match(/<loc>/g) || []).length, 5);
-const allowed = new Set(['index.html', 'services', 'portfolio', 'selected-work', 'about', 'contact', '404.html', 'CNAME', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'inter-OFL.txt', 'cosmin.webp', '_astro']);
+const robots = await readFile(join(root, 'robots.txt'), 'utf8');
+assert.ok(/User-agent: \*\nDisallow: \/\n/.test(robots), 'robots.txt does not disallow unlisted crawlers');
+assert.ok(/User-agent: GPTBot\n/.test(robots) && /User-agent: Google-Extended\n/.test(robots), 'robots.txt does not name AI crawlers');
+assert.ok(!/sitemap/i.test(robots), 'robots.txt advertises a sitemap');
+const allowed = new Set(['index.html', 'services', 'portfolio', 'selected-work', 'about', 'contact', '404.html', 'CNAME', 'robots.txt', 'favicon.svg', 'inter-OFL.txt', 'cosmin.webp', '_astro']);
 for (const name of await readdir(root)) {
   // Astro can leave empty prerender directories after removing its server files.
   if (name === '.prerender') {
@@ -55,4 +58,4 @@ async function verifyContactPrivacy(directory) {
 await verifyContactPrivacy(root);
 const redirect = await readFile(join(root, 'selected-work/index.html'), 'utf8');
 assert.ok(redirect.includes('/portfolio/'), 'Old Selected Work address does not redirect to Portfolio');
-console.log('Verified 5 pages + 404, metadata, local links/anchors, form endpoint, custom domain, sitemap, public-output boundaries, and recipient email privacy.');
+console.log('Verified 5 pages + 404, metadata, local links/anchors, form endpoint, custom domain, no-index and no-AI directives, public-output boundaries, and recipient email privacy.');

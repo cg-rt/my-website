@@ -2,8 +2,8 @@
 import '@fontsource-variable/inter/opsz.css';
 import '../styles/global.css';
 import Arrow from '../components/Arrow.astro';
-interface Props { title: string; description: string; current?: string; noindex?: boolean; }
-const { title, description, current = '', noindex = false } = Astro.props;
+interface Props { title: string; description: string; current?: string; }
+const { title, description, current = '' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/portfolio/', 'Portfolio'], ['/about/', 'About'], ['/contact/', 'Contact'] ];
 ---
@@ -23,7 +23,8 @@ const navigation = [ ['/', 'Home'], ['/services/', 'Services'], ['/portfolio/', 
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
-    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, noai, noimageai" />
+    <meta name="tdm-reservation" content="1" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
