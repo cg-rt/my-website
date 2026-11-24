@@ -3,13 +3,13 @@ title: "Three global accounts, one working setup"
 client: "Multinational enterprise"
 role: "Implementation and stakeholder coordination"
 scope: "3 accounts consolidated into one 10,000-user account · approximately 30 stakeholders"
-responsibility: "I led the consolidation, coordinating requirements, configuration decisions, quality assurance and client sign-off across regional teams and time zones."
+responsibility: "I led the consolidation of three accounts into one. I collected the requirements from each regional team, got the configuration decisions made, ran the quality assurance and took the result through client sign-off."
 result: "A single, fully working account, with full stakeholder sign-off and no outstanding issues."
-resultNote: "10,000 describes account scope, not measured active use."
+resultNote: "10,000 is the number of users on the consolidated account."
 ---
 
 ### Making regional requirements work together
 
-A twelve-month technical account review established how the existing setup worked and what needed to change. The consolidation involved different regional requirements, interpreters and multiple time zones.
+Before the consolidation there was a twelve-month technical account review, which showed how the existing accounts were set up and what had to change. About 30 people were involved, in several time zones and with different regional requirements, and some of the work went through interpreters.
 
-I worked through conflicting requirements with the regional teams, established who needed to contribute to each decision and who needed to approve it, and kept actions visible across the implementation. That’s how the findings from the review became configuration decisions all the stakeholders signed off.
+Where two regions wanted conflicting things, I took the conflict back to the teams concerned until they agreed. For each decision I wrote down who had to be consulted and who had to approve it, and I kept one action list that every region could see. All the stakeholders signed off the configuration decisions that came out of the review.

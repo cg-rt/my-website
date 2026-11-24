@@ -5,7 +5,6 @@ role: "Delivery framework, configuration and coordination"
 scope: "10,000 active users · about 12 participants across account, product and support teams · February to July 2025"
 responsibility: "I created the delivery framework, the risk and dependency plan and the invoice QA method, got internal acceptance, did account configuration work myself and coordinated the change so the account stayed live throughout."
 result: "Organizational units went from 1,700 to 70 and monthly billing configurations from 60 to 35, with no service interruptions or billing errors. Customer service management measured a 60% lower average ticket resolution time over the following six months against the previous six-month baseline."
-resultNote: "Resolution time is the measured result; cost savings were inferred, not measured. This is a different account from the three-account consolidation."
 ---
 
 ### Changing a live account without breaking billing
