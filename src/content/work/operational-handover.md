@@ -9,6 +9,6 @@ result: "The client’s operations team ran the platform independently after han
 
 ### Training users and administrators for the handover
 
-The client needed a content-management solution that fitted its internal workflows. I turned those requirements into a configuration and a delivery sequence, and used testing and client feedback to check that it fitted.
+The client needed content management that fitted the way its teams already worked. I turned the requirements into a configuration and a delivery sequence, then tested it with the client to check that it did.
 
-Training covered both users and administrators: one group needed to work with the platform, the other to support and maintain it. I tied the training to the documentation and knowledge transfer, so the operations team had what they needed to take over.
+I trained users and administrators separately, because users had to work with the platform and administrators had to support and maintain it. The training was tied to the documentation and the knowledge transfer, and after handover the operations team ran the platform on its own.
